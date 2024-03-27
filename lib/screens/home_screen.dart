@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fake_products/api/app_api.dart';
 import 'package:fake_products/controllers/cart_controller.dart';
 import 'package:fake_products/models/products_model.dart';
@@ -67,8 +68,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           color: Colors.green.shade600)),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(160),
-                                    child: Image.network(
-                                      product.image,
+                                    child: CachedNetworkImage(
+                                      imageUrl: product.image,
                                       height: 90,
                                       width: 90,
                                     ),

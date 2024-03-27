@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fake_products/controllers/cart_controller.dart';
 import 'package:fake_products/models/products_model.dart';
 import 'package:fake_products/screens/cart_screen.dart';
@@ -43,10 +44,10 @@ class _ProductScreenState extends State<ProductScreen> {
                         border: Border.all(color: Colors.green.shade600)),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(160),
-                      child: Image.network(
-                        widget.product.image,
+                      child: CachedNetworkImage(
                         height: 150,
                         width: 150,
+                        imageUrl: widget.product.image,
                       ),
                     ),
                   ),
